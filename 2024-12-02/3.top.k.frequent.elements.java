@@ -24,15 +24,15 @@ class Solution {
         );
 
         for (int key : frequencyMap.keySet()) {
-            heap.add(key);
-            if (heap.size() > k) {
-                heap.poll();
+            minHeap.add(key);
+            if (minHeap.size() > k) {
+                minHeap.poll();
             }
         }
 
         int[] result = new int[k];
         for (int i = 0; i < k; i++) {
-            result[i] = heap.poll();
+            result[i] = minHeap.poll();
         }
         return result;
     }
